@@ -1,3 +1,6 @@
+// Original C++ example ported to C by XReaper, using Dear Bindings instead of
+// ImGui directly
+
 // Dear ImGui: standalone example application for SDL3 + OpenGL
 // (SDL is a cross-platform general purpose library for handling windows,
 // inputs, OpenGL/Vulkan/Metal graphics context creation, etc.)

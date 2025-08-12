@@ -1,3 +1,6 @@
+// Original C++ example ported to C by XReaper, using Dear Bindings instead of
+// ImGui directly
+
 // Dear ImGui: standalone example application for Win32 + OpenGL 3
 
 // Learn about Dear ImGui:
@@ -9,9 +12,6 @@
 
 // This is provided for completeness, however it is strongly recommended you use
 // OpenGL with SDL or GLFW.
-
-// Original C++ example ported to C by XReaper, using Dear Bindings instead of
-// ImGui directly
 
 #include "embedded_font/font_roboto_medium.h"
 
