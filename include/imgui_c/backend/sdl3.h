@@ -1,4 +1,4 @@
-// (XReaper) Based on "imgui_impl_sdl3.h"
+// (XReaper95) Based on "imgui_impl_sdl3.h"
 
 // dear imgui: Platform Backend for SDL3
 // This needs to be used along with a Renderer (e.g. SDL_GPU, DirectX11, OpenGL3, Vulkan..)

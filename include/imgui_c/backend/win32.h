@@ -1,4 +1,4 @@
-// (XReaper) Based on "imgui_impl_win32.h"
+// (XReaper95) Based on "imgui_impl_win32.h"
 
 // dear imgui: Platform Backend for Windows (standard windows API for 32-bits AND 64-bits applications)
 // This needs to be used along with a Renderer (e.g. DirectX11, OpenGL3, Vulkan..)

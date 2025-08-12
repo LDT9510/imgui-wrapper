@@ -1,4 +1,4 @@
-// Original C++ example ported to C by XReaper, using Dear Bindings instead of
+// Original C++ example ported to C by XReaper95, using Dear Bindings instead of
 // ImGui directly
 
 // Dear ImGui: standalone example application for Win32 + OpenGL 3
