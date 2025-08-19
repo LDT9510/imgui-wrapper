@@ -19,6 +19,7 @@ with CMake. This is done manually, a rough overview of the process:
   require dependencies, these are included as submodules.
 - I included "binary_to_compressed_c.cpp" at `tools/` because it's useful.
 - Update the versions at the top of this README.
+- Original sources and headers should not be modified in any form.
 
 **IMPORTANT**: Since this is intended to be a simple convenience wrapper, user code should be 
 responsible for linking any required libraries for the backends (for example, SDL), for reference
