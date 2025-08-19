@@ -20,11 +20,15 @@ process is done manually, a rough overview of the process:
   require dependencies, these are included as submodules.
 - I included "binary_to_compressed_c.cpp" at `tools/` because it's useful.
 - Update the versions at the top of this README.
-- Original sources and headers should not be modified in any way.
+- Original sources and headers should not be modified in any way
+  (except backend headers, see note below).
 
 **IMPORTANT**: Since this is intended to be a simple convenience wrapper, user code should be
 responsible for linking any required libraries for the backends (for example, SDL), for reference
-see the examples provided in the `example` folder.
+see the examples provided in the `example` folder. Also, for convenience, there is a simple 
+modification required to make the C++ backends headers work in the provided "include" structure:
+- Replace the line `#include "imgui.h"      // IMGUI_IMPL_API` with
+  `#include "imgui/imgui.h"   // Fix for imgui-wrapper`.
 
 ## ImGui configuration
 
