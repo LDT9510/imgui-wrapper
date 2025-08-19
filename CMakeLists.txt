@@ -5,7 +5,7 @@ project(imgui_wrapper
         LANGUAGES C CXX
 )
 
-# compile as a static library
+# compilation is done as a single static library
 option(IMWRAPPER_EXAMPLES "Compile example projects" ON)
 option(IMWRAPPER_DEMO "Compile the ImGui demo project (this is the regular C++ project)" ON)
 option(IMWRAPPER_C_BINDINGS "Compile the C bindings, for the library and the backend" ON)
@@ -49,7 +49,6 @@ if (IMWRAPPER_C_BINDINGS)
             $<$<BOOL:${IMWRAPPER_OPENGL3_BACKEND}>:${SOURCES_DIR}/backend_wrapper/opengl3.cpp>
     )
 endif ()
-
 
 add_library(${PROJECT_NAME} STATIC ${IMGUI_SOURCES} ${IMGUI_BACKEND_SOURCES} ${IMWRAPPER_BINDING_SOURCES})
 
