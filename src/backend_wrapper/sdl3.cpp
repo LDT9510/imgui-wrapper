@@ -1,7 +1,7 @@
 // do not include the backend wrapper header here, as it includes "dcimgui.h"
 // and conflicts with "imgui.h" from the original backend
 
-#include "original_backend/imgui_impl_sdl3.h"
+#include "imgui_impl_sdl3.h"
 
 extern "C" {
   bool ImGui_C_ImplSDL3_InitForOpenGL(SDL_Window *window, void *sdl_gl_context) {

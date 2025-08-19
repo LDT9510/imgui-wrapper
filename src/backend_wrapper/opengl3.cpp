@@ -1,7 +1,7 @@
 // do not include the backend wrapper header here, as it includes "dcimgui.h"
 // and conflicts with "imgui.h" from the original backend
 
-#include "original_backend/imgui_impl_opengl3.h"
+#include "imgui_impl_opengl3.h"
 
 extern "C" {
   bool ImGui_C_ImplOpenGL3_Init(const char *glsl_version) {

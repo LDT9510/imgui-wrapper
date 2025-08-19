@@ -29,6 +29,10 @@
 // #include "libs/emscripten/emscripten_mainloop_stub.h"
 // #endif
 
+// comment/un-comment this line to toggle scaling
+// (scaling is done by the operative system)
+//#define USE_SCALING
+
 // Main code
 int main(void) {
   // Setup SDL
@@ -76,13 +80,22 @@ int main(void) {
   SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
   SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 24);
   SDL_GL_SetAttribute(SDL_GL_STENCIL_SIZE, 8);
-  float main_scale = SDL_GetDisplayContentScale(SDL_GetPrimaryDisplay());
+
   SDL_WindowFlags window_flags = SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE |
                                  SDL_WINDOW_HIDDEN |
                                  SDL_WINDOW_HIGH_PIXEL_DENSITY;
+
+#ifdef USE_SCALING
+  float main_scale = SDL_GetDisplayContentScale(SDL_GetPrimaryDisplay());
+
   SDL_Window *window = SDL_CreateWindow("Dear ImGui SDL3+OpenGL3 example",
                                         (int)(1280 * main_scale),
                                         (int)(720 * main_scale), window_flags);
+#else
+  SDL_Window *window = SDL_CreateWindow("Dear ImGui SDL3+OpenGL3 example",
+                                        (int)(1280), (int)(720), window_flags);
+#endif
+
   if (window == NULL) {
     printf("Error: SDL_CreateWindow(): %s\n", SDL_GetError());
     return -1;
@@ -116,9 +129,10 @@ int main(void) {
   ImGui_StyleColorsDark(NULL);
   // ImGui::StyleColorsLight();
 
+#ifdef USE_SCALING
   // Setup scaling
   ImGuiStyle *style = ImGui_GetStyle();
-
+  
   ImGuiStyle_ScaleAllSizes(
       style, main_scale); // Bake a fixed style scale. (until we have a solution
                           // for dynamic style scaling, changing this requires
@@ -127,6 +141,7 @@ int main(void) {
       main_scale; // Set initial font scale. (using io.ConfigDpiScaleFonts=true
                   // makes this unnecessary. We leave both here for
                   // documentation purpose)
+#endif
 
   // Setup Platform/Renderer backends
   ImGui_C_ImplSDL3_InitForOpenGL(window, gl_context);

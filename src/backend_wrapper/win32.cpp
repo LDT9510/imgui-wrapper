@@ -1,7 +1,7 @@
 // do not include the backend wrapper header here, as it includes "dcimgui.h"
 // and conflicts with "imgui.h" from the original backend
 
-#include "original_backend/imgui_impl_win32.h"
+#include "imgui_impl_win32.h"
 
 #ifndef WIN32_LEAN_AND_MEAN
 #define WIN32_LEAN_AND_MEAN
